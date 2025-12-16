@@ -1,0 +1,100 @@
+/* src/components/ProjectCard.css */
+
+.image - stack - container {
+    position: relative;
+    padding: 10px; /* Space for the layers to show */
+    cursor: pointer;
+}
+
+.image - main - wrapper {
+    position: relative;
+    height: 250px;
+    border - radius: 12px;
+    overflow: hidden;
+    z - index: 3;
+    border: 1px solid var(--border - color);
+}
+
+.stack - layer {
+    position: absolute;
+    width: 90 %;
+    height: 100 %;
+    border - radius: 12px;
+    left: 5 %;
+    border: 1px solid var(--border - color);
+    transition: all 0.3s ease;
+}
+
+.layer - 2 { top: 4px; background: var(--background - secondary); z - index: 2; opacity: 0.8; }
+.layer - 3 { top: -2px; background: var(--background - primary); z - index: 1; opacity: 0.5; }
+
+.project - card: hover.layer - 2 { transform: translateY(8px) scale(1.02); }
+.project - card: hover.layer - 3 { transform: translateY(-8px) scale(0.98); }
+
+.gallery - count {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 12px;
+    border - radius: 20px;
+    font - size: 0.75rem;
+    font - weight: 700;
+    backdrop - filter: blur(4px);
+}
+
+/* --- MODAL / LIGHTBOX STYLES --- */
+
+.modal - overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100 %; height: 100 %;
+    background: rgba(0, 0, 0, 0.95);
+    z - index: 9999;
+    display: flex;
+    justify - content: center;
+    padding: 40px;
+    overflow - y: auto;
+}
+
+.modal - content {
+    width: 100 %;
+    max - width: 1200px;
+    position: relative;
+}
+
+.close - modal {
+    position: fixed;
+    top: 20px; right: 30px;
+    font - size: 3rem;
+    color: white;
+    background: none; border: none; cursor: pointer;
+    z - index: 10000;
+}
+
+/* MASONRY LAYOUT: Perfect for different ratios */
+.modal - grid {
+    column - count: 3; /* 3 columns for desktop */
+    column - gap: 20px;
+}
+
+.modal - image - wrapper {
+    margin - bottom: 20px;
+    break-inside: avoid; /* Prevents image splitting between columns */
+}
+
+.modal - image - wrapper img {
+    width: 100 %;
+    border - radius: 8px;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.modal - image - wrapper img:hover {
+    transform: scale(1.02);
+}
+
+@media(max - width: 768px) {
+    .modal - grid { column - count: 1; }
+    .modal - overlay { padding: 10px; }
+}

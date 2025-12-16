@@ -1,0 +1,145 @@
+/* --- 3D Perspective Wrapper --- */
+.project-card-wrapper {
+    perspective: 1000px;
+    /* Essential for 3D */
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 20px;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s;
+    transform-style: preserve-3d;
+}
+
+.project-card:hover {
+    transform: rotateX(5deg) rotateY(-5deg) translateY(-10px);
+    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.5),
+        -5px -5px 20px rgba(255, 255, 255, 0.02);
+}
+
+/* --- The Modern Image Stack --- */
+.image-main-wrapper {
+    position: relative;
+    height: 260px;
+    border-radius: 20px;
+    z-index: 3;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.glass-reflection {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(30deg);
+    transition: 0.8s;
+}
+
+.project-card:hover .glass-reflection {
+    left: 100%;
+    /* Shimmer effect on hover */
+}
+
+/* --- Category Pill & Badges --- */
+.category-pill {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.glass-badge {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    transition: 0.3s;
+}
+
+.project-card:hover .glass-badge {
+    background: var(--accent-color);
+    color: #000;
+}
+
+/* --- Modern Slider UI --- */
+.modern-blur {
+    backdrop-filter: blur(25px) saturate(180%);
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.slider-viewport {
+    width: 95vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.slider-controls-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.project-info-mini h4 {
+    font-size: 1.5rem;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.project-info-mini p {
+    color: var(--accent-color);
+    font-weight: 700;
+    margin: 0;
+}
+
+.glass-nav {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.glass-nav:hover {
+    background: var(--accent-color);
+    color: black;
+    transform: scale(1.1);
+}
+
+.slider-pagination {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.dot {
+    width: 30px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    transition: 0.4s;
+}
+
+.dot.active {
+    background: var(--accent-color);
+    width: 60px;
+    box-shadow: 0 0 15px var(--accent-color);
+}

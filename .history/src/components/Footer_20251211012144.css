@@ -1,0 +1,56 @@
+/* src/components/Footer.css */
+
+.footer-container {
+    /* CHANGE 1: Use header background variable (often dark) */
+    background-color: var(--header-bg);
+    /* CHANGE 2: Use header text variable (often light) */
+    color: var(--header-text);
+    padding: 30px 20px;
+    text-align: center;
+    /* CHANGE 3: Use accent color for border */
+    border-top: 5px solid var(--accent-color);
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-links,
+.social-links {
+    margin-bottom: 20px;
+}
+
+.footer-links a,
+.social-links a {
+    /* CHANGE 4: Use a slightly less dominant text color */
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover,
+.social-links a:hover {
+    /* CHANGE 5: Use accent color for hover */
+    color: var(--accent-color);
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    /* CHANGE 6: Use a muted color */
+    color: var(--text-secondary);
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 600px) {
+
+    .footer-links a,
+    .social-links a {
+        display: block;
+        margin: 10px 0;
+    }
+}

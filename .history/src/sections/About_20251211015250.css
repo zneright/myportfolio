@@ -1,0 +1,229 @@
+/* General Section Styling */
+.about-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    /* Dark text for readability */
+    background-color: #f9f9f9;
+    /* Light background for the section */
+    border-radius: 8px;
+}
+
+/* Header and Contact Information */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    /* Align contact info to the bottom of the header */
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.section-header h2 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.contact-meta p {
+    margin: 2px 0;
+    font-size: 0.9em;
+    text-align: right;
+}
+
+.contact-link {
+    color: #3498db;
+    /* Blue link color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-link:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* Summary Bio Container - Unique Element Styling */
+.bio-container {
+    margin: 20px 0 40px 0;
+    padding: 20px;
+    background-color: #ecf0f1;
+    /* Light grey background for emphasis */
+    border-left: 5px solid #3498db;
+    /* Accent color bar */
+    border-radius: 4px;
+}
+
+.summary-text {
+    font-size: 1.1em;
+    line-height: 1.6;
+    font-style: italic;
+    color: #555;
+}
+
+/* Main Content Grid Layout (Skills and Credentials) */
+.content-grid {
+    display: grid;
+    /* Two columns: one slightly smaller for skills, one for credentials */
+    grid-template-columns: 2fr 3fr;
+    gap: 40px;
+    align-items: start;
+    /* Ensures containers start at the top */
+}
+
+.skills-container,
+.credentials-container {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.content-grid h3 {
+    font-size: 1.6em;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* --- Skills Section --- */
+.skills-intro {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+}
+
+.skill-category {
+    margin-bottom: 20px;
+}
+
+.skill-title {
+    display: block;
+    font-size: 1.1em;
+    color: #34495e;
+    margin-bottom: 8px;
+    padding-bottom: 3px;
+    border-bottom: 1px dashed #eee;
+}
+
+.skill-badges {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows badges to wrap to the next line */
+    gap: 8px;
+}
+
+.badge {
+    background-color: #3498db;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85em;
+    font-weight: 500;
+    white-space: nowrap;
+    /* Prevents badges from breaking words */
+}
+
+
+/* --- Education Timeline Section --- */
+
+/* Timeline container with a vertical line */
+.education-timeline {
+    position: relative;
+    padding-left: 20px;
+    /* Space for the line and dots */
+    margin-bottom: 30px;
+}
+
+.education-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #bdc3c7;
+    /* Light gray line */
+}
+
+.education-item {
+    position: relative;
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+}
+
+/* Timeline dots */
+.education-item::before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    /* Adjust based on padding-left of container */
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #3498db;
+    /* Blue dot */
+    border: 3px solid #fff;
+    /* White border for emphasis against the line */
+    z-index: 1;
+    /* Ensure dot is on top of the line */
+}
+
+.degree {
+    font-size: 1.2em;
+    color: #2c3e50;
+    margin: 0 0 2px 0;
+}
+
+.institution {
+    font-size: 1em;
+    color: #7f8c8d;
+    margin: 0;
+}
+
+.years {
+    display: block;
+    font-size: 0.9em;
+    color: #95a5a6;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+
+/* --- Certifications Section --- */
+.certification-list {
+    list-style: none;
+    /* Remove default bullet points */
+    padding-left: 0;
+}
+
+.certification-list li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+    font-size: 1em;
+}
+
+.certification-list li::before {
+    content: '★';
+    /* Star icon as bullet */
+    color: #f1c40f;
+    /* Gold color */
+    font-size: 0.8em;
+    position: absolute;
+    left: 0;
+    top: 3px;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+    .content-grid {
+        /* Stack columns vertically on smaller screens */
+        grid-template-columns: 1fr;
+    }
+}

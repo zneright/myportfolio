@@ -1,0 +1,220 @@
+/* --- Elite About Section Styling --- */
+
+.about-section {
+    padding: 100px 20px;
+    background: var(--background-primary);
+    display: flex;
+    justify-content: center;
+}
+
+.about-glass-container {
+    max-width: 1300px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    padding: 60px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Header Section --- */
+.about-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 60px;
+}
+
+.sub-tag {
+    color: var(--accent-color);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.about-header h2 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: -2px;
+}
+
+.contact-meta-modern {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.meta-item {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 16px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.meta-item:hover {
+    background: var(--accent-color);
+    color: #000;
+}
+
+/* --- Bio Statement --- */
+.bio-statement {
+    position: relative;
+    margin-bottom: 80px;
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+    border-radius: 24px;
+}
+
+.quote-mark {
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 8rem;
+    opacity: 0.1;
+    font-family: serif;
+}
+
+.summary-text {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+    font-weight: 300;
+    margin: 0;
+}
+
+/* --- Modern Grid --- */
+.modern-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+}
+
+.section-label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    margin-bottom: 30px;
+    border-left: 3px solid var(--accent-color);
+    padding-left: 15px;
+}
+
+/* --- Skills Chips --- */
+.skill-group {
+    margin-bottom: 30px;
+}
+
+.skill-group-title {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.badge-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-chip {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 18px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skill-chip:hover {
+    transform: translateY(-5px);
+    background: var(--accent-color);
+    color: #000;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Timeline --- */
+.custom-timeline {
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    padding-left: 30px;
+}
+
+.education-item {
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -39px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+.years-pill {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px 12px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+/* --- Cert Cards --- */
+.cert-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.cert-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.cert-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(10px);
+}
+
+.cert-icon {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+    .modern-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .about-header {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-glass-container {
+        padding: 30px;
+    }
+}

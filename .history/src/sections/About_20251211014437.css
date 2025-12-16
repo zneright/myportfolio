@@ -1,0 +1,189 @@
+/* src/sections/About.css - Professional Polish */
+
+.about-section {
+    padding: 80px 40px;
+    /* Increased padding for more visual breathing room */
+    background-color: var(--background-secondary);
+    /* Use secondary BG for slight separation from Hero */
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: background-color 0.5s;
+}
+
+.about-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--text-primary);
+    position: relative;
+}
+
+/* Subtle line under the main H2 title */
+.about-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.bio-container {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+    /* Clean horizontal separator */
+}
+
+.summary-text {
+    font-size: 1.15rem;
+    /* Slightly larger, easier to read */
+    line-height: 1.7;
+    margin-bottom: 15px;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.contact-info {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.contact-info a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* --- Content Grid & Headings --- */
+
+.content-grid {
+    display: flex;
+    gap: 60px;
+    /* Increased gap */
+}
+
+.skills-container,
+.credentials-container {
+    flex: 1;
+    background-color: var(--background-primary);
+    /* Gives the boxes a slight elevation/contrast */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    /* Soft, professional shadow */
+}
+
+.skills-container h3,
+.credentials-container h3 {
+    /* Title only, border removed in favor of box shadow */
+    font-size: 1.4rem;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: var(--accent-color);
+    /* Use accent color for section titles */
+}
+
+/* --- Skills Badges --- */
+
+.skill-category {
+    margin-bottom: 20px;
+}
+
+.skill-category strong {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 1.05rem;
+}
+
+.badge {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--text-primary);
+    padding: 6px 12px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    /* Pill shape for a modern look */
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/* --- Education & Certifications (Timeline Effect) --- */
+
+.education-item {
+    margin-bottom: 30px;
+    padding-left: 20px;
+
+    /* TIMELINE EFFECT (The Vertical Line) */
+    border-left: 3px solid var(--border-color);
+    position: relative;
+}
+
+/* Timeline Dot */
+.education-item::before {
+    content: '';
+    position: absolute;
+    left: -7px;
+    /* Positions the dot on the line */
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    border: 3px solid var(--background-primary);
+    /* Creates a cutout effect in the dot */
+}
+
+
+.education-item h4 {
+    margin-top: 0;
+    margin-bottom: 2px;
+    font-size: 1.15rem;
+    color: var(--text-primary);
+}
+
+.education-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.certification-list {
+    list-style-type: none;
+    /* Remove default bullet */
+    padding-left: 0;
+}
+
+.certification-list li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 8px;
+}
+
+/* Custom Checkmark Bullet */
+.certification-list li::before {
+    content: '✅';
+    position: absolute;
+    left: 0;
+    font-size: 0.8rem;
+}
+
+
+/* Make the layout single column on smaller screens */
+@media (max-width: 768px) {
+    .content-grid {
+        flex-direction: column;
+        gap: 30px;
+    }
+}

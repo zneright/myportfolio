@@ -1,0 +1,271 @@
+/* src/sections/About.css - FINAL UNIQUE PROFESSIONAL POLISH */
+
+.about-section {
+    /* Padding adjustments */
+    padding: 120px 100px 80px;
+    background-color: var(--background-primary);
+    max-width: 1600px;
+    margin: 0 auto;
+    position: relative;
+    /* Needed for absolute positioning of unique elements */
+    transition: all 0.5s;
+}
+
+/* --- Section Header (Title & Contact) --- */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+    border-bottom: 3px solid var(--text-primary);
+    padding-bottom: 25px;
+}
+
+.section-header h2 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- Contact Meta --- */
+.contact-meta p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    text-align: right;
+    line-height: 1.5;
+}
+
+.contact-meta a {
+    color: var(--accent-color);
+    text-decoration: none;
+    position: relative;
+}
+
+.contact-meta a:hover {
+    text-decoration: underline;
+}
+
+
+/* --- Unique Element: Bio Container (The Interruption) --- */
+.bio-container {
+    /* Positioning outside the grid flow */
+    position: absolute;
+    top: 180px;
+    /* Pull it up to visually cut the main grid */
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 60%;
+    max-width: 800px;
+    padding: 30px;
+
+    /* Strong visual definition */
+    background-color: var(--accent-color);
+    border: 3px solid var(--text-primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 5;
+    /* Ensure it floats above the main content */
+
+    border-radius: 8px;
+    transition: all 0.5s;
+}
+
+.summary-text {
+    font-size: 1.2rem;
+    /* Adjusted size for the contained box */
+    line-height: 1.6;
+    text-align: center;
+    color: var(--text-primary);
+    /* Uses dark text for high contrast on the accent BG */
+    font-weight: 400;
+    /* Remove original bio-container vertical breaks */
+    margin: 0;
+}
+
+
+/* --- Content Grid (Shifted Down to Account for Floating Element) --- */
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 120px;
+    /* SHIFT DOWN: Pushes the grid below the floating bio-container */
+    margin-top: 250px;
+    position: relative;
+    /* Reset positioning context */
+}
+
+/* --- Skills Container --- */
+
+.skills-container h3,
+.credentials-container h3 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 35px;
+    padding: 0;
+    position: relative;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.skills-intro {
+    /* NEW INTRO LINE STYLE */
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+/* --- Skills Badges (High Contrast, Minimalist) --- */
+
+.skill-category {
+    margin-bottom: 35px;
+}
+
+.skill-title {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: var(--text-primary);
+    /* Now primary text, not muted secondary */
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px dotted var(--border-color);
+    /* Subtle separation line */
+    padding-bottom: 5px;
+}
+
+.badge {
+    background-color: var(--background-secondary);
+    color: var(--text-primary);
+    padding: 10px 18px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    /* Slightly softer corners for unique touch */
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid var(--border-color);
+}
+
+.badge:hover {
+    background-color: var(--accent-color);
+    color: var(--background-primary);
+    border-color: var(--accent-color);
+}
+
+
+/* --- Education Timeline (Unique Positioning) --- */
+
+.education-timeline {
+    border-left: 1px solid var(--border-color);
+    padding-left: 30px;
+    margin-bottom: 40px;
+}
+
+.education-item {
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+/* Timeline Dot - Subtle but clearly functional */
+.education-item::before {
+    content: '';
+    position: absolute;
+    left: -35px;
+    top: 8px;
+    /* Lowered dot position */
+    width: 6px;
+    /* Smaller dot */
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    box-shadow: 0 0 0 3px var(--background-primary);
+    /* Stronger cutout/separation */
+}
+
+.years {
+    float: right;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+/* --- Certifications --- */
+
+.certification-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.certification-list li {
+    padding-left: 30px;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.certification-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1200px) {
+    .bio-container {
+        width: 80%;
+        /* Wider bio container on medium screens */
+        top: 150px;
+        padding: 20px;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        margin-top: 200px;
+        /* Reduced shift */
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 60px 20px;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .bio-container {
+        position: static;
+        /* Remove floating effect on mobile */
+        transform: none;
+        width: 100%;
+        margin-bottom: 40px;
+        border: 1px solid var(--text-primary);
+    }
+
+    .content-grid {
+        margin-top: 0;
+        /* No shift needed */
+    }
+
+    .contact-meta p {
+        text-align: left;
+    }
+}

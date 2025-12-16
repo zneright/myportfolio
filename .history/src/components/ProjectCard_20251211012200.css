@@ -1,0 +1,90 @@
+/* src/components/ProjectCard.css */
+
+.project-card {
+    /* CHANGE 1: Use border color variable */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    /* Box shadow can use standard black/gray since it relies on transparency */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* CHANGE 2: Use primary background for the card body */
+    background-color: var(--background-primary);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    margin-top: 0;
+    /* CHANGE 3: Use primary text color */
+    color: var(--text-primary);
+}
+
+.description {
+    /* CHANGE 4: Use secondary text color */
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.tech-stack {
+    margin-bottom: 15px;
+}
+
+.tech-badge {
+    display: inline-block;
+    /* CHANGE 5: Use accent color variable for badge background */
+    background-color: var(--accent-color);
+    /* CHANGE 6: Use primary text color for contrast text */
+    color: var(--text-primary);
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    margin-right: 5px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.card-links a {
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.live-btn {
+    /* CHANGE 7: Use a standard button color or a specific accent */
+    background-color: #007bff;
+    color: white;
+    /* Keep white for high contrast */
+}
+
+.live-btn:hover {
+    background-color: #0056b3;
+}
+
+.github-btn {
+    /* CHANGE 8: Use primary text color for the button */
+    background-color: var(--text-primary);
+    /* CHANGE 9: Use primary background color for the button text */
+    color: var(--background-primary);
+}
+
+.github-btn:hover {
+    filter: brightness(1.2);
+}

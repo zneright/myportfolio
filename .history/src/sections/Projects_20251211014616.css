@@ -1,0 +1,40 @@
+/* src/sections/Projects.css - FINAL PROFESSIONAL DESIGN */
+
+.projects-section {
+    padding: 80px 40px;
+    /* Consistent padding */
+    background-color: var(--background-secondary);
+    text-align: center;
+    transition: background-color 0.5s;
+}
+
+.projects-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--text-primary);
+    position: relative;
+    font-weight: 800;
+}
+
+/* Accent line under the title */
+.projects-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.projects-grid {
+    display: grid;
+    /* Clean layout with auto-fit for responsiveness */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    /* Increased gap for better separation */
+    max-width: 1400px;
+    margin: 0 auto;
+}

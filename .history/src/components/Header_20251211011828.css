@@ -1,0 +1,49 @@
+/* src/components/Header.css */
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #282c34;
+    /* Dark background */
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #61dafb;
+    /* React blue color */
+}
+
+/* src/components/Header.css (Add this to the end) */
+
+.theme-toggle-btn {
+    background-color: var(--accent-color);
+    color: var(--text-primary);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-left: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle-btn:hover {
+    filter: brightness(1.2);
+}

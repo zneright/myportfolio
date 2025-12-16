@@ -1,0 +1,96 @@
+/* --- The Image Stack & Scroll Logic --- */
+.image-main-wrapper {
+    position: relative;
+    height: 400px;
+    /* Increased height for better initial view */
+    border-radius: 20px;
+    z-index: 3;
+    overflow: hidden;
+    background: #111;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    /* Allow the image to be as long as it needs to be */
+    display: block;
+    transform: translateY(0);
+    /* Transition speed depends on how long the image is; 5s is usually smooth */
+    transition: transform 5s ease-in-out;
+}
+
+/* THE FIX: Scroll the image all the way to the bottom on hover */
+.project-card:hover .project-image {
+    /* Moves the image up until the bottom edge hits the bottom of the container */
+    transform: translateY(calc(-100% + 400px));
+}
+
+/* --- Full Screen Modal (Manual Scroll Fix) --- */
+.image-stage.scrollable-stage {
+    flex: 1;
+    height: 80vh;
+    /* Fixed height for the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Align to top so scrolling starts at start */
+    overflow-y: auto;
+    /* ALLOWS MANUAL SCROLLING */
+    padding-right: 10px;
+    /* Space for scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) transparent;
+}
+
+/* For Chrome/Safari scrollbar */
+.image-stage.scrollable-stage::-webkit-scrollbar {
+    width: 6px;
+}
+
+.image-stage.scrollable-stage::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
+}
+
+.full-length-image {
+    width: auto;
+    max-width: 100%;
+    /* Keeps the width within bounds */
+    height: auto;
+    /* Shows full natural length */
+    border-radius: 8px;
+    filter: drop-shadow(0 0 30px rgba(0, 0, 0, 1));
+    margin-bottom: 50px;
+    /* Extra space at bottom of scroll */
+}
+
+/* --- Adjusted Modal Nav Buttons --- */
+.glass-nav {
+    z-index: 1001;
+    /* Ensure arrows stay above the scrolling image */
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.slider-viewport {
+    padding: 20px 60px;
+    /* More space on sides for arrows */
+}
+
+/* Transition for the modal image when switching slides */
+.active-slide {
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

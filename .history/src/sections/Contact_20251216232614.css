@@ -1,0 +1,141 @@
+    /* src/sections/Contact.css - FINAL PROFESSIONAL DESIGN */
+
+    .contact-section {
+        padding: 80px 40px;
+        background-color: var(--background-primary);
+        /* Use primary BG */
+        text-align: center;
+        transition: background-color 0.5s;
+    }
+
+    .contact-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+        color: var(--text-primary);
+        position: relative;
+        font-weight: 800;
+    }
+
+    /* Accent line under the title */
+    .contact-section h2::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--accent-color);
+        border-radius: 2px;
+    }
+
+    .contact-intro {
+        font-size: 1.15rem;
+        margin-bottom: 40px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        color: var(--text-secondary);
+    }
+
+    .contact-details {
+        margin-bottom: 40px;
+        font-size: 1.1rem;
+        color: var(--text-primary);
+    }
+
+    .contact-details a {
+        color: var(--accent-color);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    /* --- Contact Form Styling (Neumorphic) --- */
+
+    .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 40px;
+        background-color: var(--background-secondary);
+        /* Use secondary BG for the form box */
+        border-radius: 15px;
+
+        /* Neumorphic/Soft-UI Shadow */
+        box-shadow:
+            10px 10px 30px rgba(0, 0, 0, 0.1),
+            -10px -10px 30px rgba(255, 255, 255, 0.05);
+
+        text-align: left;
+        transition: background-color 0.5s, box-shadow 0.5s;
+    }
+
+    .contact-form h3 {
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 30px;
+        color: var(--text-primary);
+    }
+
+    .form-group {
+        margin-bottom: 25px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: var(--text-primary);
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 15px;
+        border: none;
+        /* Remove border, rely on shadow */
+        border-radius: 10px;
+        box-sizing: border-box;
+        font-size: 1rem;
+        color: var(--text-primary);
+        background-color: var(--background-primary);
+        /* Input background */
+
+        /* Neumorphic Inset Shadow for 'pressed' field look */
+        box-shadow:
+            inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+            inset -4px -4px 8px rgba(255, 255, 255, 0.05);
+
+        transition: all 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        /* Accent color glow on focus */
+        box-shadow:
+            0 0 0 2px var(--accent-color),
+            inset 4px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .submit-btn {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        background-color: var(--accent-color);
+        color: var(--text-primary);
+        border: none;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        cursor: pointer;
+
+        /* Consistent Button Shadow */
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s;
+    }
+
+    .submit-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+        filter: brightness(1.1);
+    }

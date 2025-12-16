@@ -1,0 +1,67 @@
+/* src/components/ResumeDocument.css */
+
+.resume-page {
+    width: 210mm;
+    /* A4 width */
+    min-height: 297mm;
+    /* A4 height */
+    padding: 20mm;
+    margin: 0 auto;
+    background: white;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 12pt;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* For visual debugging only */
+}
+
+.resume-header {
+    text-align: center;
+    border-bottom: 2px solid #61dafb;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.resume-header h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.resume-header .resume-title {
+    margin: 5px 0;
+    font-weight: 600;
+}
+
+.contact-line a {
+    color: #333;
+    text-decoration: none;
+}
+
+.resume-section {
+    margin-bottom: 20px;
+}
+
+.resume-section h2 {
+    font-size: 1.2em;
+    color: #61dafb;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.skills-list,
+.certifications-list {
+    list-style: none;
+    padding: 0;
+}
+
+.education-entry h3 {
+    margin: 0 0 2px 0;
+    font-size: 1em;
+}
+
+.education-entry span {
+    font-style: italic;
+    float: right;
+}

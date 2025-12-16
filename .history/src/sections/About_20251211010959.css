@@ -1,0 +1,98 @@
+/* src/sections/About.css */
+
+.about-section {
+    padding: 60px 40px;
+    background-color: #ffffff;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.summary-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-info {
+    text-align: center;
+    margin-bottom: 40px;
+    font-style: italic;
+    color: #555;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.content-grid {
+    display: flex;
+    gap: 40px;
+}
+
+.skills-container,
+.credentials-container {
+    flex: 1;
+}
+
+.skills-container h3,
+.credentials-container h3 {
+    border-bottom: 2px solid #61dafb;
+    /* React color line */
+    padding-bottom: 5px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #282c34;
+}
+
+.skill-category {
+    margin-bottom: 15px;
+}
+
+.skill-badges {
+    margin-top: 5px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #e0f7ff;
+    color: #007bff;
+    padding: 5px 10px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.education-item {
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 3px solid #ccc;
+}
+
+.education-item h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+.certification-list {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+/* Make the layout single column on smaller screens */
+@media (max-width: 768px) {
+    .content-grid {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,117 @@
+/* src/sections/Contact.css */
+
+.contact-section {
+    padding: 60px 40px;
+    /* CHANGE 1: Use secondary background variable (for contrast) */
+    background-color: var(--background-secondary);
+    text-align: center;
+    transition: background-color 0.5s;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    /* CHANGE 2: Use primary text variable */
+    color: var(--text-primary);
+}
+
+.contact-intro {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-details {
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.contact-details a {
+    /* CHANGE 3: Use accent color variable */
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-details a:hover {
+    filter: brightness(1.2);
+}
+
+/* --- Contact Form Styling --- */
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    /* CHANGE 4: Use primary background variable (inverted box color) */
+    background-color: var(--background-primary);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: background-color 0.5s;
+}
+
+.contact-form h3 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+    /* CHANGE 5: Use primary text variable */
+    color: var(--text-primary);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    /* CHANGE 6: Use secondary text variable */
+    color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    /* CHANGE 7: Use border variable */
+    border: 1px solid var(--border-color);
+    /* CHANGE 8: Ensure input text color follows theme */
+    color: var(--text-primary);
+    /* CHANGE 9: Ensure input background color follows theme */
+    background-color: var(--background-primary);
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    /* CHANGE 10: Use accent color for focus */
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    /* CHANGE 11: Use accent color */
+    background-color: var(--accent-color);
+    /* CHANGE 12: Use primary text color for contrast */
+    color: var(--text-primary);
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    filter: brightness(1.2);
+}

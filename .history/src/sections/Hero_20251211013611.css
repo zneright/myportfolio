@@ -1,0 +1,198 @@
+/* src/sections/Hero.css */
+
+.hero-container {
+    /* Larger minimum height for grander feel */
+    min-height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Use a slight vertical gradient for background depth */
+    background: linear-gradient(to bottom, var(--background-primary), var(--background-secondary));
+    padding: 80px 40px;
+    transition: all 0.5s ease-in-out;
+}
+
+.hero-grid-content {
+    display: grid;
+    /* Adjusted ratio for stronger visual flow */
+    grid-template-columns: 3.5fr 1.5fr;
+    max-width: 1400px;
+    width: 100%;
+    align-items: center;
+    text-align: left;
+}
+
+/* --- TEXT AREA STYLING --- */
+
+.greeting {
+    font-size: 1.2rem;
+    /* High contrast secondary text */
+    color: var(--accent-color);
+    margin-bottom: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.hero-name {
+    /* EVEN BIGGER FONT with fine adjustments */
+    font-size: 6rem;
+    font-weight: 900;
+    margin: 0 0 10px 0;
+    color: var(--text-primary);
+    line-height: 1;
+    letter-spacing: -4px;
+    /* Tighter kerning for impact */
+    transition: color 0.5s;
+}
+
+.hero-name span {
+    color: var(--accent-color);
+}
+
+.hero-title {
+    /* Subtler title to let the name dominate */
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--text-secondary);
+    margin-bottom: 50px;
+    line-height: 1.2;
+}
+
+/* --- VISUAL AREA STYLING --- */
+
+.hero-visual-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* Aligns content better */
+    height: 100%;
+}
+
+.hero-profile-image-container {
+    width: 250px;
+    /* LARGER image */
+    height: 250px;
+    border-radius: 50%;
+
+    /* COMPLEX BORDER/GLOW EFFECT */
+    background: var(--text-primary);
+    /* Base color for border glow */
+    padding: 8px;
+    /* Inner padding creates the border */
+
+    /* 3D Box Shadow for Depth */
+    box-shadow:
+        0 0 0 4px var(--accent-color),
+        /* Primary glow */
+        0 0 20px rgba(0, 0, 0, 0.5),
+        /* Strong shadow */
+        0 0 40px var(--accent-color);
+    /* Subtle outer glow */
+
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.hero-profile-image-container:hover {
+    transform: scale(1.02);
+    /* Subtle hover effect */
+    box-shadow:
+        0 0 0 6px var(--accent-color),
+        /* Stronger glow on hover */
+        0 0 30px rgba(0, 0, 0, 0.7),
+        0 0 50px var(--accent-color);
+}
+
+.hero-profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    /* Image is a perfect circle inside the glow */
+    display: block;
+}
+
+.sub-tagline {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-top: 25px;
+    padding: 5px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    /* Pill shape */
+    background-color: var(--background-primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Button Styles (Refined for depth) --- */
+
+.primary-btn {
+    background-color: var(--accent-color);
+    color: var(--text-primary);
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* Subtle 3D lift */
+}
+
+.primary-btn:hover {
+    background-color: var(--accent-color);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    /* Higher lift on hover */
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+}
+
+.secondary-btn:hover {
+    background-color: var(--text-primary);
+    color: var(--background-primary);
+    border-color: var(--text-primary);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .hero-grid-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-name {
+        font-size: 4rem;
+        letter-spacing: -2px;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-visual-area {
+        margin-bottom: 40px;
+        order: -1;
+    }
+
+    .hero-profile-image-container {
+        width: 180px;
+        height: 180px;
+        padding: 6px;
+    }
+
+    .hero-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        margin-right: 0;
+        width: 100%;
+    }
+}

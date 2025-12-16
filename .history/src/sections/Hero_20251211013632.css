@@ -1,0 +1,209 @@
+/* src/sections/Hero.css */
+
+.hero-container {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-primary);
+    padding: 80px 40px;
+    transition: background-color 0.5s;
+}
+
+.hero-grid-content {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    /* 60% text, 40% visual */
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
+    text-align: left;
+    /* Text starts from the left */
+}
+
+/* --- TEXT AREA STYLING --- */
+
+.greeting {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.hero-name {
+    /* HUGE, BOLD FONT */
+    font-size: 5rem;
+    font-weight: 900;
+    margin: 0 0 10px 0;
+    color: var(--text-primary);
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+/* Highlight the last part of the name with the accent color */
+.hero-name span {
+    color: var(--accent-color);
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 40px;
+}
+
+/* --- VISUAL AREA STYLING --- */
+
+.hero-visual-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-profile-image {
+    width: 200px;
+    /* Larger image */
+    height: 200px;
+    border-radius: 50%;
+    /* Use a gradient or strong background to make it pop */
+    background: linear-gradient(135deg, var(--accent-color), var(--background-secondary));
+    border: 5px solid var(--text-primary);
+    margin-bottom: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.hero-profile-image:hover {
+    transform: scale(1.05) rotate(1deg);
+}
+
+.sub-tagline {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+/* --- Button Styles (Updated colors for better contrast) --- */
+.hero-actions {
+    margin-top: 40px;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 15px 30px;
+    /* Larger buttons */
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 20px;
+}
+
+.primary-btn {
+    background-color: var(--accent-color);
+    color: var(--text-primary);
+    border: none;
+}
+
+.primary-btn:hover {
+    filter: brightness(1.2);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+}
+
+.secondary-btn:hover {
+    background-color: var(--text-primary);
+    color: var(--background-primary);
+    border-color: var(--text-primary);
+}
+
+/* --- Responsive Adjustments (Crucial for attention-grabbing layout) --- */
+@media (max-width: 992px) {
+    .hero-grid-content {
+        grid-template-columns: 1fr;
+        /* Stack columns on smaller screens */
+        text-align: center;
+    }
+
+    .hero-name {
+        font-size: 3.5rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-visual-area {
+        margin-top: 40px;
+        order: -1;
+        /* Place image above text on mobile */
+    }
+
+    .hero-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        margin-right: 0;
+        width: 100%;
+    }
+}
+
+/* src/sections/Hero.css */
+
+/* ... (Keep existing .hero-container and .hero-grid-content styles) ... */
+
+/* --- VISUAL AREA STYLING --- */
+
+.hero-visual-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* New container style to hold the image */
+.hero-profile-image-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    /* Use a gradient or strong background to make it pop */
+    background: linear-gradient(135deg, var(--accent-color), var(--background-secondary));
+    border: 5px solid var(--text-primary);
+    margin-bottom: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    overflow: hidden;
+    /* Ensures the image is clipped to the circle border */
+}
+
+/* Apply image styling to the actual <img> element */
+.hero-profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Crucial: ensures the image fills the circle without distortion */
+    display: block;
+}
+
+.hero-profile-image-container:hover {
+    transform: scale(1.05) rotate(1deg);
+}
+
+.sub-tagline {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}

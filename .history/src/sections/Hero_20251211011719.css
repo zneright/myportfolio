@@ -1,0 +1,104 @@
+/* src/sections/Hero.css */
+
+.hero-container {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* CHANGE 1: Use background variable */
+    background-color: var(--background-primary);
+    padding: 80px 20px;
+    transition: background-color 0.5s;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.greeting {
+    font-size: 1.5rem;
+    /* CHANGE 2: Use secondary text variable */
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+}
+
+.hero-name {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0;
+    /* CHANGE 3: Use primary text variable */
+    color: var(--text-primary);
+    text-transform: uppercase;
+}
+
+.hero-title {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-top: 5px;
+    /* CHANGE 4: Use accent color variable */
+    color: var(--accent-color);
+    margin-bottom: 30px;
+}
+
+.hero-actions {
+    margin-top: 40px;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+/* Primary Button Styling */
+.primary-btn {
+    /* CHANGE 5: Use accent color variable */
+    background-color: var(--accent-color);
+    /* CHANGE 6: Color should contrast accent */
+    color: var(--text-primary);
+    border: 2px solid var(--accent-color);
+}
+
+.primary-btn:hover {
+    filter: brightness(1.2);
+    /* Simple hover effect that works on any color */
+}
+
+/* Secondary Button Styling */
+.secondary-btn {
+    background-color: transparent;
+    /* CHANGE 7: Use primary text/border color */
+    color: var(--text-primary);
+    border: 2px solid var(--text-primary);
+}
+
+.secondary-btn:hover {
+    background-color: var(--text-primary);
+    color: var(--background-primary);
+    /* Text color becomes background color when inverted */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .hero-name {
+        font-size: 3rem;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        display: block;
+        margin: 10px auto;
+    }
+}

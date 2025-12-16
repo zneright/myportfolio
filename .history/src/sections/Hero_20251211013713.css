@@ -1,0 +1,203 @@
+/* src/sections/Hero.css - Final High-Fidelity Professional Version */
+
+.hero-container {
+    /* Larger minimum height for a grander feel */
+    min-height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Subtle Background: Use a radial gradient for depth, common in neomorphism */
+    background: radial-gradient(circle at top left, var(--background-secondary) 0%, var(--background-primary) 80%);
+
+    padding: 80px 40px;
+    transition: all 0.7s ease-in-out;
+}
+
+.hero-grid-content {
+    display: grid;
+    /* Use CSS Grid Gap for spacing */
+    gap: 80px;
+    grid-template-columns: 3.5fr 1.5fr;
+    max-width: 1400px;
+    width: 100%;
+    align-items: center;
+    text-align: left;
+}
+
+/* --- TEXT AREA STYLING --- */
+
+.greeting {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    /* Wide spacing for modern look */
+}
+
+.hero-name {
+    /* EVEN BIGGER FONT with complex shadow for depth */
+    font-size: 6.5rem;
+    font-weight: 900;
+    margin: 0 0 10px 0;
+    line-height: 0.95;
+    letter-spacing: -4px;
+    color: var(--text-primary);
+
+    /* TEXT SHADOW: Adds depth, looks complex and custom */
+    text-shadow:
+        0 0 1px var(--text-primary),
+        0 0 10px rgba(0, 0, 0, 0.1);
+    transition: color 0.5s;
+}
+
+.hero-name span {
+    /* The part of the name that gets the glow effect */
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-color);
+}
+
+.hero-title {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--text-secondary);
+    margin-bottom: 50px;
+    line-height: 1.4;
+}
+
+/* --- VISUAL AREA STYLING --- */
+
+.hero-visual-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    /* Subtle background circle in the visual area for complexity */
+    background: radial-gradient(circle at 70% 30%, var(--background-secondary) 10%, transparent 80%);
+}
+
+.hero-profile-image-container {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+
+    /* COMPLEX BORDER/GLOW EFFECT */
+    background: var(--background-primary);
+    padding: 10px;
+    /* Padding creates the outer ring/bezel */
+
+    /* Neumorphic/Soft-UI Shadows: complex inner and outer shadows */
+    box-shadow:
+        10px 10px 20px rgba(0, 0, 0, 0.3),
+        /* Darker outer shadow (Bottom Right) */
+        -10px -10px 20px rgba(255, 255, 255, 0.05),
+        /* Lighter inner shadow (Top Left) */
+        0 0 0 5px var(--accent-color);
+    /* Strong accent ring */
+
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* Smooth, non-linear transition */
+    overflow: hidden;
+}
+
+.hero-profile-image-container:hover {
+    /* Slight inward push effect for neomorphic design */
+    box-shadow:
+        inset 5px 5px 10px rgba(0, 0, 0, 0.2),
+        /* Simulated pressed-in effect */
+        inset -5px -5px 10px rgba(255, 255, 255, 0.05),
+        0 0 0 7px var(--accent-color);
+    transform: scale(0.98);
+    /* Subtle reduction to simulate press */
+}
+
+.hero-profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    /* Optional: Apply a subtle filter if the image is too colorful */
+    filter: grayscale(10%);
+}
+
+.sub-tagline {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 30px;
+    padding: 8px 20px;
+    border-radius: 50px;
+
+    /* Neumorphic Tagline */
+    background-color: var(--background-secondary);
+    box-shadow:
+        5px 5px 10px rgba(0, 0, 0, 0.1),
+        -5px -5px 10px rgba(255, 255, 255, 0.05);
+}
+
+/* --- Button Styles (Neumorphic Style) --- */
+
+.primary-btn,
+.secondary-btn {
+    /* ... common styles remain ... */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+        -5px -5px 10px rgba(255, 255, 255, 0.05);
+    /* Neumorphic box shadow */
+    transition: all 0.3s ease-in-out;
+}
+
+.primary-btn {
+    background-color: var(--accent-color);
+    color: var(--text-primary);
+    border: none;
+}
+
+.primary-btn:hover {
+    /* Simulating a button press */
+    transform: translateY(1px);
+    box-shadow:
+        inset 3px 3px 5px rgba(0, 0, 0, 0.3),
+        inset -3px -3px 5px var(--accent-color);
+    /* Inset shadow on hover */
+    filter: brightness(0.9);
+}
+
+.secondary-btn {
+    background-color: var(--background-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.secondary-btn:hover {
+    /* Secondary button press effect */
+    transform: translateY(1px);
+    box-shadow:
+        inset 3px 3px 5px rgba(0, 0, 0, 0.1),
+        inset -3px -3px 5px rgba(255, 255, 255, 0.1);
+    background-color: var(--background-primary);
+}
+
+
+/* --- Responsive Adjustments (Crucial for attention-grabbing layout) --- */
+@media (max-width: 992px) {
+
+    /* ... (Keep existing responsive adjustments from previous step) ... */
+    .hero-name {
+        font-size: 4rem;
+        letter-spacing: -2px;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-profile-image-container {
+        width: 180px;
+        height: 180px;
+        padding: 6px;
+    }
+}

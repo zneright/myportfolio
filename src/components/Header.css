@@ -1,0 +1,131 @@
+/* src/components/Header.css */
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+
+    /* 1. Use Header BG and Text Variables */
+    background-color: var(--header-bg);
+    color: var(--header-text);
+
+    /* 2. Glassmorphism/Floating Effect */
+    position: sticky;
+    /* Keeps it visible when scrolling */
+    top: 0;
+    z-index: 1000;
+    /* Ensures it stays on top of content */
+
+    /* Subtle Transparency (Adjust alpha channel for header background) */
+    background-color: rgba(40, 44, 52, 0.95);
+    /* Base Dark Mode transparency */
+
+    /* Apply styles specifically for Light Mode override */
+    /* This handles the dark mode state, but we need to ensure the variable is used */
+    transition: background-color 0.3s, box-shadow 0.3s;
+
+    /* A stronger shadow for the floating effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode adjustment for Transparency */
+body.dark-theme .header-container {
+    background-color: rgba(18, 18, 18, 0.95);
+    /* Darker transparency for dark theme */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    /* Stronger shadow in dark mode */
+}
+
+
+.logo {
+    font-size: 1.6rem;
+    /* Slightly larger */
+    font-weight: 700;
+    /* Bolder logo */
+    letter-spacing: 1px;
+    color: var(--header-text);
+    /* Ensures color works with theme */
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    /* Use gap instead of left margin for better control */
+}
+
+.nav-links a {
+    color: var(--header-text);
+    /* Ensures color works with theme */
+    text-decoration: none;
+    font-size: 1.05rem;
+    /* Slightly smaller for cleaner look */
+    font-weight: 500;
+    padding: 5px 0;
+    /* Add padding for a clickable area */
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+    /* React blue color */
+}
+
+/* Micro-interaction: Underline effect on hover */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease-out;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* --- Theme Toggle Button --- */
+
+.theme-toggle-btn {
+    /* Use Accent Color for high visibility */
+    background-color: var(--accent-color);
+    color: var(--text-primary);
+    /* Ensures text contrast */
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-left: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle-btn:hover {
+    filter: brightness(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-container {
+        padding: 1rem 1rem;
+    }
+
+    .nav-links {
+        gap: 0.8rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    .theme-toggle-btn {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+}

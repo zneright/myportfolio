@@ -1,0 +1,49 @@
+/* src/sections/Hero.css */
+
+/* ... (Keep existing .hero-container and .hero-grid-content styles) ... */
+
+/* --- VISUAL AREA STYLING --- */
+
+.hero-visual-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* New container style to hold the image */
+.hero-profile-image-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    /* Use a gradient or strong background to make it pop */
+    background: linear-gradient(135deg, var(--accent-color), var(--background-secondary));
+    border: 5px solid var(--text-primary);
+    margin-bottom: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    overflow: hidden;
+    /* Ensures the image is clipped to the circle border */
+}
+
+/* Apply image styling to the actual <img> element */
+.hero-profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Crucial: ensures the image fills the circle without distortion */
+    display: block;
+}
+
+.hero-profile-image-container:hover {
+    transform: scale(1.05) rotate(1deg);
+}
+
+.sub-tagline {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+/* ... (Keep existing responsive adjustments) ... */

@@ -1,0 +1,95 @@
+/* src/components/Footer.css */
+
+.footer-container {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 40px 20px;
+    /* Increased padding slightly */
+    text-align: center;
+    border-top: 5px solid var(--accent-color);
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    /* Use Flexbox for better vertical stacking */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    /* Adds space between the sections */
+}
+
+/* --- Footer Navigation Links (Text) --- */
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+}
+
+/* --- Social Media Icons Section --- */
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    /* Space between icons */
+    margin-bottom: 10px;
+}
+
+/* Styling the anchor tag wrapping the icon */
+.social-links a {
+    color: var(--text-secondary);
+    /* Default icon color */
+    font-size: 1.8rem;
+    /* MAKE ICONS BIGGER */
+    display: flex;
+    /* Ensures icon is centered in the link box */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for icons */
+.social-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-5px);
+    /* Subtle "pop up" effect on hover */
+}
+
+/* --- Copyright --- */
+.copyright {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    opacity: 0.8;
+}
+
+/* Responsive adjustment */
+@media (max-width: 600px) {
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer-links a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .social-links {
+        gap: 20px;
+        /* Slightly tighter spacing on mobile */
+    }
+}
