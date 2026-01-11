@@ -61,15 +61,7 @@ const ResumeDocument = React.forwardRef((props, ref) => {
             {/* If you provide project data, this section would map over it */}
             <div className="resume-section">
                 <h2>Key Projects</h2>
-                <ul className="projects-list">
-                    {projects.slice(0, 3).map((project) => (
-                        <li key={project.id}>
-                            <h3>{project.title}</h3>
-                            <p>{project.description}</p>
-                            <p><strong>Tech Stack:</strong> {project.techStack.join(', ')}</p>
-                        </li>
-                    ))}
-                </ul>
+<ul className="projects-list">
             </div>
 
         </div>

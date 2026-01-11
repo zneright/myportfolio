@@ -51,8 +51,8 @@
 }
 
 .skills-list,
-.certifications-list,
-.projects-list {
+.certifications-list
+.pr {
     list-style: none;
     padding: 0;
 }

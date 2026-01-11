@@ -33,7 +33,7 @@ function Contact() {
                 <div className="contact-info-panel">
                     <span className="sub-tag">Contact</span>
                     <h2>Get In Touch</h2>
-                    <p>I am actively seeking opportunities in Information Technology Field. My inbox is always open.</p>
+                    <p>I am actively seeking opportunities in Inf. My inbox is always open.</p>
 
                     <div className="info-cards">
                         <div className="info-card">

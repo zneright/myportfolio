@@ -2,7 +2,7 @@
 import React from 'react';
 import { bio, skills, education, certifications } from '../data/aboutData';
 import './ResumeDocument.css'; // We'll style this for print
-import { projects } from '../data/projectsData';
+import 
 // This component is the *content* that gets converted to PDF
 const ResumeDocument = React.forwardRef((props, ref) => {
     return (
@@ -61,15 +61,7 @@ const ResumeDocument = React.forwardRef((props, ref) => {
             {/* If you provide project data, this section would map over it */}
             <div className="resume-section">
                 <h2>Key Projects</h2>
-                <ul className="projects-list">
-                    {projects.slice(0, 3).map((project) => (
-                        <li key={project.id}>
-                            <h3>{project.title}</h3>
-                            <p>{project.description}</p>
-                            <p><strong>Tech Stack:</strong> {project.techStack.join(', ')}</p>
-                        </li>
-                    ))}
-                </ul>
+
             </div>
 
         </div>
